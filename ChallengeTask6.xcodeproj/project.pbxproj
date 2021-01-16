@@ -13,7 +13,6 @@
 		F1EE23AD25AEEF0E00A4605F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1EE23AB25AEEF0E00A4605F /* Main.storyboard */; };
 		F1EE23AF25AEEF0E00A4605F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EE23AE25AEEF0E00A4605F /* Assets.xcassets */; };
 		F1EE23B225AEEF0E00A4605F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1EE23B025AEEF0E00A4605F /* LaunchScreen.storyboard */; };
-		F1EE23BB25AF09DC00A4605F /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F1EE23BA25AF09DC00A4605F /* swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		F1EE23AE25AEEF0E00A4605F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1EE23B125AEEF0E00A4605F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1EE23B325AEEF0E00A4605F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1EE23BA25AF09DC00A4605F /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +40,6 @@
 		F1EE239925AEEF0E00A4605F = {
 			isa = PBXGroup;
 			children = (
-				F1EE23BA25AF09DC00A4605F /* swiftlint.yml */,
 				F1EE23A425AEEF0E00A4605F /* ChallengeTask6 */,
 				F1EE23A325AEEF0E00A4605F /* Products */,
 			);
@@ -129,7 +126,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EE23B225AEEF0E00A4605F /* LaunchScreen.storyboard in Resources */,
-				F1EE23BB25AF09DC00A4605F /* swiftlint.yml in Resources */,
 				F1EE23AF25AEEF0E00A4605F /* Assets.xcassets in Resources */,
 				F1EE23AD25AEEF0E00A4605F /* Main.storyboard in Resources */,
 			);
