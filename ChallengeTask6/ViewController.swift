@@ -6,40 +6,50 @@
 //
 
 import UIKit
+
 class ViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var slider: UISlider!
+
+    private var answer = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.reset()
+        reset()
     }
+
     @IBAction public func didTapButton(_ sender: Any) {
-        let value = Int(slider.value)
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.groupingSeparator = ","
-        numberFormatter.groupingSize = 3
-        let result = numberFormatter.string(from: NSNumber(integerLiteral: value))
-        if label.text == "\(result ?? "")" {
-            self.alert(message: "当たり!\nあなたの値\(result ?? "")")
-        } else {
-            self.alert(message: "はずれ!\n あなたの値\(result ?? "")")
-        }
+        let sliderValue = Int(slider.value)
+
+        let firstLine: String = {
+            if answer == sliderValue {
+                return "当たり!"
+            } else {
+                return "はずれ!"
+            }
+        }()
+
+        alert(message: "\(firstLine)\nあなたの値\(sliderValue)")
     }
+
     private func reset() {
+        answer = Int.random(in: 0...10000)
         slider.value = 5000
-        let number = arc4random_uniform(10000)
+        updateLabel()
+    }
+
+    private func updateLabel() {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.groupingSeparator = ","
         numberFormatter.groupingSize = 3
-        let result = numberFormatter.string(from: NSNumber(integerLiteral: Int(number)))
-        label.text = "\(result ?? "")"
+        label.text = numberFormatter.string(from: NSNumber(integerLiteral: answer))
     }
+
     private func alert(message: String) {
         let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { (  _) in
-            self.reset()
+        alert.addAction(UIAlertAction(title: "再挑戦", style: .default, handler: { [weak self] _ in
+            self?.reset()
         }))
         present(alert, animated: true, completion: nil)
     }
